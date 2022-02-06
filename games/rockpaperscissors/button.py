@@ -1,6 +1,7 @@
 import pygame
 
 
+# Define our Button object with Image
 class Button(object):
     def __init__(self, image_path, name, size, position):
         self.image = pygame.image.load(image_path)
@@ -17,11 +18,12 @@ class Button(object):
         if event.type == pygame.MOUSEBUTTONDOWN:
             if event.button == 1:
                 if self.rect.collidepoint(event.pos):
-                    print("chosen")
                     self.chosen = True
                 else:
                     self.chosen = False
 
+
+# Define our Button object with Text
 class ButtonText(object):
     def __init__(self, name, position, font_type, font_size, text_colour, bg_colour):
         self.name = name
